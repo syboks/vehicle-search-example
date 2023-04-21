@@ -6,6 +6,8 @@ import com.syboks.vehicle.search.example.service.ManufacturerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ManufacturerImpl implements ManufacturerService {
 
@@ -15,5 +17,11 @@ public class ManufacturerImpl implements ManufacturerService {
     @Override
     public Manufacturer saveManufacturer(Manufacturer manufacturer) {
         return manufacturerDAO.save(manufacturer);
+    }
+
+    @Override
+    public List<Manufacturer> fetchAllManufacturers() {
+        List<Manufacturer> dbManufacturers=manufacturerDAO.findAll();
+        return dbManufacturers;
     }
 }
