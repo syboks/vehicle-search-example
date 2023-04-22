@@ -15,7 +15,8 @@ public class ManufacturerImpl implements ManufacturerService {
     private ManufacturerDAO manufacturerDAO;
 
     @Override
-    public Manufacturer saveManufacturer(Manufacturer manufacturer) {
+    public Manufacturer saveManufacturer(Manufacturer manufacturer)
+    {
         return manufacturerDAO.save(manufacturer);
     }
 
